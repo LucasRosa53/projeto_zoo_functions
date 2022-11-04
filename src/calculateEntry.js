@@ -22,8 +22,7 @@ function countEntrants(entrants) {
   return { child, adult, senior };
 }
 function calculateEntry(entrants) {
-  // seu código aqui
-  if (!entrants || {}) {
+  if (!entrants || Object.keys(entrants).length === 0) {
     return 0;
   }
   const { child, adult, senior } = countEntrants(entrants);
