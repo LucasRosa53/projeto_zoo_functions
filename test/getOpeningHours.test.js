@@ -12,17 +12,17 @@ describe('Testes da função getOpeningHours', () => {
       Monday: { open: 0, close: 0 },
     });
   });
-  it('Para os argumentos Monday e 09:00-AM deve retornar a string The zoo is closed, Já que o Zoo está sempre fechado na segunda', () => {
+  it('Para os argumentos Monday e 09:00-AM deve retornar a string, Já que o Zoo está sempre fechado na segunda', () => {
     expect(getOpeningHours('Monday', '09:00-AM')).toBe('The zoo is closed');
   });
-  it('Para os argumentos Tuesday e 09:00-AM deve retornar a string The zoo is open', () => {
+  it('Para os argumentos Tuesday e 09:00-AM deve retornar a string', () => {
     expect(getOpeningHours('Tuesday', '09:00-AM')).toBe('The zoo is open');
   });
-  it('Para os argumentos Wednesday e 09:00-PM deve retornar a string The zoo is open', () => {
+  it('Para os argumentos Wednesday e 09:00-PM deve retornar a string', () => {
     expect(getOpeningHours('Wednesday', '09:00-PM')).toBe('The zoo is closed');
   });
-  it('Para os argumentos Wednesday e 09:00-PM deve retornar a string The zoo is open', () => {
-    expect(getOpeningHours('Wednesday', '09:00-PM')).toBe('The zoo is closed');
+  it('Para os argumentos Wednesday e 09:00-AM deve retornar a string', () => {
+    expect(getOpeningHours('Wednesday', '09:00-AM')).toBe('The zoo is open');
   });
   it('Para os argumentos Friday e 09:00-ZM deve lançar uma exceção com a mensagem: The abbreviation must be AM or PM', () => {
     expect(() => getOpeningHours('Wednesday', '09:00-ZM')).toThrow('The abbreviation must be \'AM\' or \'PM\'');
