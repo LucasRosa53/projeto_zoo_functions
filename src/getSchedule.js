@@ -7,10 +7,10 @@ const { species, hours } = require('../data/zoo_data');
 const diasDaSemana = Object.keys(hours);
 
 const zoologicoGeral = () => {
-  const obj = diasDaSemana.reduce((acc, elem) => {
-    acc[elem] = {
-      officeHour: `Open from ${hours[elem].open}am until ${hours[elem].close}pm`,
-      exhibition: species.filter((animal) => animal.availability.includes(elem)).map((a) => a.name),
+  const obj = diasDaSemana.reduce((acc, curr) => {
+    acc[curr] = {
+      officeHour: `Open from ${hours[curr].open}am until ${hours[curr].close}pm`,
+      exhibition: species.filter((animal) => animal.availability.includes(curr)).map((a) => a.name),
     };
     return acc;
   }, {});
